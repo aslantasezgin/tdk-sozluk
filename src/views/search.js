@@ -1,10 +1,7 @@
 
 import React from "react"
 import {View, Text, Button} from "react-native"
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import DetailView from "./detail";
 
-const HomeStack = createNativeStackNavigator();
 
 
 function SearchView({navigation}) {
@@ -20,13 +17,6 @@ function SearchView({navigation}) {
   }
 
 
-  function SearchStack() {
-    return (
-        <HomeStack.Navigator>
-          <HomeStack.Screen name="Arama Yap" component={SearchView} />
-          <HomeStack.Screen name="Detail" component={DetailView} />
-        </HomeStack.Navigator>
-      );
-  }
 
-  export default SearchStack
+
+  export default SearchView

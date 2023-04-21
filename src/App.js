@@ -5,9 +5,11 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import SearchView from "./views/search";
 import FavoriteView from "./views/favorite";
 import HistoryView from "./views/history";
-import SearchStack from "./views/search";
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import DetailView from "./views/detail";
 
 
+const HomeStack = createNativeStackNavigator();
 
   
   function SettingsScreen() {
@@ -19,6 +21,15 @@ import SearchStack from "./views/search";
   }
   const Tab = createBottomTabNavigator();
 
+
+  function SearchStack() {
+    return (
+        <HomeStack.Navigator>
+          <HomeStack.Screen name="Arama Yap" component={SearchView} />
+          <HomeStack.Screen name="Detail" component={DetailView} />
+        </HomeStack.Navigator>
+      );
+  }
 
 const App = () => {
     return(
