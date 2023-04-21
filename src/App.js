@@ -5,6 +5,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import SearchView from "./views/search";
 import FavoriteView from "./views/favorite";
 import HistoryView from "./views/history";
+import SearchStack from "./views/search";
 
 
 
@@ -25,7 +26,7 @@ const App = () => {
         <NavigationContainer>
       <Tab.Navigator>
         <Tab.Screen name="Favorite" component={FavoriteView} />
-        <Tab.Screen name="Search" component={SearchView} />
+        <Tab.Screen name="Search" component={SearchStack} />
         <Tab.Screen name="History" component={HistoryView} />
 
       </Tab.Navigator>
