@@ -1,16 +1,13 @@
 import React from "react"
-import {View, Text, SafeAreaView} from "react-native"
+import {View, Text} from "react-native"
 import { NavigationContainer } from '@react-navigation/native'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import SearchView from "./views/search";
+import FavoriteView from "./views/favorite";
+import HistoryView from "./views/history";
 
 
-function HomeScreen() {
-    return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Text>Aşkım Seni!</Text>
-      </View>
-    );
-  }
+
   
   function SettingsScreen() {
     return (
@@ -27,8 +24,10 @@ const App = () => {
         
         <NavigationContainer>
       <Tab.Navigator>
-        <Tab.Screen name="Home" component={HomeScreen} />
-        <Tab.Screen name="Settings" component={SettingsScreen} />
+        <Tab.Screen name="Favorite" component={FavoriteView} />
+        <Tab.Screen name="Search" component={SearchView} />
+        <Tab.Screen name="History" component={HistoryView} />
+
       </Tab.Navigator>
      
         </NavigationContainer>
